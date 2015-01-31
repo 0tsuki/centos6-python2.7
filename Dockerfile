@@ -15,3 +15,7 @@ RUN cd /opt \
   && ./configure --prefix=/usr/local \
   && make \
   && make altinstall
+RUN useradd app
+RUN su - app
+RUN curl -o - https://bootstrap.pypa.io/ez_setup.py | python2.7 - --user \
+  && curl -o - https://bootstrap.pypa.io/get-pip.py | python2.7 - --user
