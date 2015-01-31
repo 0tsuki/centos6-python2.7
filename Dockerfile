@@ -6,8 +6,9 @@ RUN yum install -y bzip2-devel
 RUN yum install -y openssl-devel
 RUN yum install -y ncurses-devel
 RUN yum install -y sqlite-devel
-RUN yum install -y mysql mysql-devel
+RUN yum install -y mysql mysql-server mysql-devel
 RUN yum install -y tar
+RUN echo "root:root" | chpasswd
 RUN cd /opt \
   && curl --remote-name https://www.python.org/ftp/python/3.4.2/Python-3.4.2.tar.xz \
   && tar xf Python-3.4.2.tar.xz \
@@ -31,3 +32,4 @@ RUN $PYENV_ROOT/bin/pip install django
 RUN $PYENV_ROOT/bin/pip install mysqlclient
 RUN $PYENV_ROOT/bin/pip install readline
 RUN $PYENV_ROOT/bin/pip install uwsgi
+CMD /bin/bash
