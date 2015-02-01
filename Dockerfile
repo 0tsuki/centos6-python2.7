@@ -6,7 +6,7 @@ RUN yum install -y bzip2-devel
 RUN yum install -y openssl-devel
 RUN yum install -y ncurses-devel
 RUN yum install -y sqlite-devel
-RUN yum install -y mysql mysql-server mysql-devel
+RUN yum install -y mysql mysql-devel
 RUN yum install -y tar
 RUN echo "root:root" | chpasswd
 RUN cd /opt \
