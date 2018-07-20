@@ -1,4 +1,4 @@
-FROM centos:6
+FROM centos
 MAINTAINER OTSUKI Shinsuke
 RUN yum groupinstall -y "Development tools"
 RUN yum install -y zlib-devel
